@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_20_233737) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_21_173538) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "photo_count"
+    t.integer "photos_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_categories_on_name", unique: true
@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_233737) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "comments_count", default: 0
     t.index ["category_id"], name: "index_photos_on_category_id"
   end
 
