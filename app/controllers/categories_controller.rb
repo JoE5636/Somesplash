@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @photos = @category.photos
+    @comments = @category.comments
   end
 
   def create
@@ -30,7 +31,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to department_path(@category)
+      redirect_to category_path(@category)
     else
       render "edit", status: :unprocessable_entity
     end
@@ -39,7 +40,6 @@ class CategoriesController < ApplicationController
   def destroy
     # category = Category.find(params[:id])
     # category.destroy
-
     # redirect_to_category_path, status: :see_other
   end
 
