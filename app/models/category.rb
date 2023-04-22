@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+    has_one_attached :cover
     has_many :photos
     has_many :comments, as: :commentable, dependent: :destroy
 

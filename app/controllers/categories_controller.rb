@@ -37,10 +37,10 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    category = Category.find(params[:id])
-    category.destroy
+    # category = Category.find(params[:id])
+    # category.destroy
 
-    redirect_to_categories_path, status: :see_other
+    # redirect_to_category_path, status: :see_other
   end
 
   private 

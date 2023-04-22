@@ -1,2 +1,18 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<h1>Categories</h1>
+<% @categories.each do |category| %>
+<div>
+  <% if category.cover.attached? %>
+    <div>
+      <%= image_tag category.cover,  alt: "Category image" %>
+    </div>
+  <% end %>
+  <span>
+    <%= category.name %>
+  </span>
+  <span>
+    <%= category.photos_count %>
+  </span>
+
+
+</div>
+<% end %>
