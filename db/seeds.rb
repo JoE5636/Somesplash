@@ -46,19 +46,20 @@ puts "Seeding Photos"
 purple = Photo.create(
     title: "Purple lake", 
     description: "Purple Lake was beautiful. We camped down the trail Cascade Valley, as you must camp 300 feet from the outage", 
-    category: nature) 
-
+    category: nature)
+    purple.image.attach(io: File.open('db/images/purple.png'), filename: 'purple.png')
+    
 green = Photo.create(
-    title: "Purple lake",
+    title: "Green plant",
     description: "Nice plant", 
-    category: nature
-)
+    category: nature)
+    green.image.attach(io: File.open('db/images/green_plant.png'), filename: 'green_plant.png')
 
 bird = Photo.create(
     title: "Lonely bird",
     description: "A tiny paper bird shares a home with humans in this wondrously illustrated debut, introducing a sensitive.", 
-    category: nature
-)
+    category: nature)
+    bird.image.attach(io: File.open('db/images/lonely_bird.png'), filename: 'lonely_bird.png')
 
 puts "Seeding Comments Photos"
 

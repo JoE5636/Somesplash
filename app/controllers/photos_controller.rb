@@ -1,12 +1,15 @@
 class PhotosController < ApplicationController
-  def new
-    @photo = Photo.new
-    @category = Category.find(params[:category_id])
-  end
-
   def show
     @photo = Photo.find(params[:id])
+    @comments = @photo.comments
+    # @comment = Photo.find(params[:id]).comments.create.comment_params
   end
+
+  def new
+    @photo = Photo.new
+  end
+
+  def edit; end
 
   def create
     @photo = Photo.new(photo_params)
@@ -17,22 +20,25 @@ class PhotosController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def comment_create
+  #   @comment = Photo.find(params[:id]).comments.create.comment_params
+  # end
 
-  def update
-  end
+  def update; end
 
-  def destroy
-  end
+  def destroy; end
 
   def search
     @photos = Photo.search(params[:query].downcase)
   end
 
-  private 
+  private
 
   def photo_params
     params.require(:photo).permit(:title, :description, :category_id, :image, :id)
+  end
+
+  def comment_params
+    params.require(:photo).permit(:body)
   end
 end

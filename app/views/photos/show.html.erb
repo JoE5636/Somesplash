@@ -1,5 +1,11 @@
-<h1>Photos</h1>
-
+<h1>The photo number <%= params[:id]%></h1>
+<h1>
+    <%= @photo.title %>
+</h1>
+<p>
+    <%= @photo.description %>
+</p>
+<p>Updated at</p>
 <div>
     <% if @photo.image.attached? %>
       <div>
@@ -7,12 +13,6 @@
       </div>
     <% end %>
 </div>
-<p>
-    <%= @photo.title %>
-</p>
-<p>
-    <%= @photo.description %>
-</p>
 <div>
     <%= link_to "edit", edit_photo_path(@photo) %>
     <%= link_to "destroy", photo_path(@photo), data: {
@@ -20,4 +20,23 @@
       turbo_confirm: "Are you sure?"
     } %>
 </div>
+<h3>Deja un comentario</h3>
+<h2>Comments</h2>
+<% @comments.each do |comment| %>
+  <div>
+    <% unless comment.blank?%>
+      <div>
+        <br />
+        <%= comment.body %>
+        <p>Send x days ago</p>
+        <p>Photo.find(1).comments.create(body:"hola amigaso")</p>
+        <p>Photo.find(1).comments.find(7).delete</p>
+        
+        <br />
+      </div>
+    <% end %>
+  </div>
+
+<% end %>
+
 

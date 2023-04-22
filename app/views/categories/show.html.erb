@@ -1,4 +1,4 @@
-<h1>Categories</h1>
+<h1>The category number <%= params[:id]%></h1>
 <h1>
   <%= @category.name %>
 </h1>
@@ -21,10 +21,7 @@
   </div>
   <p>
     <%= photo.title %>
-  </p>
-  <p>
-    <%= photo.description %>
-  </p>
+  </p> 
   <div>
     <%= link_to "edit", edit_photo_path(photo) %>
     <%= link_to "destroy", photo_path(photo), data: {
