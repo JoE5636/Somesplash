@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to "Some Splash", categories_path %>
+      <%= link_to 'Search', photos_search_path %>
+    </header>
     <%= yield %>
+    <footer>
+      nombres del equipo
+    </footer>
   </body>
 </html>

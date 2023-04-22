@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    
+    @photo = Photo.find(params[:id])
   end
 
   def create
@@ -26,9 +26,13 @@ class PhotosController < ApplicationController
   def destroy
   end
 
+  def search
+    @photos = Photo.search(params[:query].downcase)
+  end
+
   private 
 
   def photo_params
-    params.require(:photo).permit(:title, :description, :category_id, :image)
+    params.require(:photo).permit(:title, :description, :category_id, :image, :id)
   end
 end

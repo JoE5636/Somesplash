@@ -1,2 +1,23 @@
-<h1>Photos#show</h1>
-<p>Find me in app/views/photos/show.html.erb</p>
+<h1>Photos</h1>
+
+<div>
+    <% if @photo.image.attached? %>
+      <div>
+        <%= image_tag @photo.image %>
+      </div>
+    <% end %>
+</div>
+<p>
+    <%= @photo.title %>
+</p>
+<p>
+    <%= @photo.description %>
+</p>
+<div>
+    <%= link_to "edit", edit_photo_path(@photo) %>
+    <%= link_to "destroy", photo_path(@photo), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+</div>
+

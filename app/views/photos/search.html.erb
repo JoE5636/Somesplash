@@ -1,0 +1,22 @@
+<% @photos.each do |photo| %>
+  <div>
+    <% if photo.image.attached? %>
+      <div>
+        <%= image_tag photo.image %>
+      </div>
+    <% end %>
+  </div>
+  <p>
+    <%= photo.title %>
+  </p>
+  <p>
+    <%= photo.description %>
+  </p>
+  <div>
+    <%= link_to "edit", edit_photo_path(photo) %>
+    <%= link_to "destroy", photo_path(photo), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+  </div>
+<% end %>
