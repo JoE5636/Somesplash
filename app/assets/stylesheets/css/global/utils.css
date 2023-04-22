@@ -1,0 +1,76 @@
+.w-full {
+    width: 100%;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.overline {
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+}
+
+.mono {
+    font-family: "Source Code Pro", monospace;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.ml-4 {
+    margin-left: 1rem;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.color-primary {
+    color: var(--primary);
+}
+
+.color-primary-dark {
+    color: var(--primary-dark);
+}
+
+.bg-color-secondary-light {
+    background-color: var(--secondary-light);
+}
+
+.bg-color-secondary-dark {
+    background-color: var(--background-dark);
+}
+
+/* .margin-left-1x {
+    margin-left: 1rem;
+  }
+  
+  .margin-left-2x {
+    margin-left: 2rem;
+  }
+  
+  .margin-left-3x {
+    margin-left: 3rem;
+  } */
+
+.icon {
+    display: flex;
+}
+
+.space {
+    margin-bottom: .75rem;
+}
