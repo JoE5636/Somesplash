@@ -25,7 +25,7 @@
   <%= form.label :cover %>
   <%= form.file_field :cover, accept: 'image/png, image/jpeg' %>
 
-  <% photo.errors.full_messages_for(:cover).each do |message| %>
+  <% category.errors.full_messages_for(:cover).each do |message| %>
     <span>
       <%= message %>
     </span>
