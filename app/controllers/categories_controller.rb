@@ -3,29 +3,28 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def new
-    @category = Category.new
-  end
-
   def show
     @category = Category.find(params[:id])
     @photos = @category.photos
     @comments = @category.comments
-    @newcomment = Comment.new
+  end
+
+  def new
+    @category = Category.new
+  end
+
+  def edit
+    @category = Category.find(params[:id])
   end
 
   def create
     @category = Category.new(category_params)
-  
+
     if @category.save
       redirect_to category_path(@category)
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @category = Category.find(params[:id])
   end
 
   def update
@@ -44,7 +43,7 @@ class CategoriesController < ApplicationController
     redirect_to category_path, status: :see_other
   end
 
-  private 
+  private
 
   def category_params
     params.require(:category).permit(:name, :description, :cover)

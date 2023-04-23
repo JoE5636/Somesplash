@@ -2,15 +2,15 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @comments = @photo.comments
-    @newcomment = Comment.new
-    # @comment = Photo.find(params[:id]).comments.create.comment_params
   end
 
   def new
     @photo = Photo.new
   end
 
-  def edit; end
+  def edit
+    @photo = Photo.find(params[:id])
+  end
 
   def create
     @photo = Photo.new(photo_params)
@@ -21,9 +21,17 @@ class PhotosController < ApplicationController
     end
   end
 
-  # def comment_create
-  #   @comment = Photo.find(params[:id]).comments.create.comment_params
-  # end
+  def comment_create
+    @photo = Photo.find(params[:photo_id])
+    @comment = @photo.comments.build(comment_params)
+
+    if @comment.save
+      redirect_to photo_path(@photo), notice: "Comment created successfully"
+    else
+      @comments = @photo.comments
+      render :show
+    end
+  end
 
   def update; end
 
@@ -37,9 +45,5 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(:title, :description, :category_id, :image, :id)
-  end
-
-  def comment_params
-    params.require(:photo).permit(:body)
   end
 end
