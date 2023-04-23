@@ -31,22 +31,26 @@
   </div>
 <% end %>
 
-<%= form_with(model: [@category, @newcomment], url: category_comments_path(@category)) do |form| %>
-  <div>
-    <%= form.text_field :body %>
-  </div>
+<%= form_for(Comment.new, url: comments_create_path, method: "get") do |form| %>
 
-  <%= form.submit 'Agregar Comentario' %>
+  <%= form.label :comment %>
+  <%= form.text_area :body %>
+  <%= form.hidden_field :commentable_type, value: @category.class.to_s %>
+  <%= form.hidden_field :commentable_id, value: @category.id %>
+  <%= form.submit "Create comment" %>
 <% end %>
 
 <% @comments.each do |comment| %>
   <div>
     <% unless comment.blank?%>
       <div>
-        <br />
-        <br />
+        <br />        
+        <div>
         <%= comment.body %>
-        <br />
+        </div>
+        <div>
+        Send <%= time_ago_in_words(comment.created_at) %> ago
+        </div>
         <br />
       </div>
     <% end %>
