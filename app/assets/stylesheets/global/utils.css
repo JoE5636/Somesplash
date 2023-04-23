@@ -74,3 +74,11 @@
 .space {
     margin-bottom: .75rem;
 }
+
+.margin__footer {
+    margin-top: 10px;
+}
+
+.paddings__footer {
+    padding: 0 0;
+}
