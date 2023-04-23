@@ -34,8 +34,7 @@ class PhotosController < ApplicationController
   end
 
   def update
-    @pohto = Photo.find(params[:id])
-
+    @photo = Photo.find(params[:id])
     if @photo.update(photo_params)
       redirect_to photo_path(@photo)
     else
@@ -43,10 +42,19 @@ class PhotosController < ApplicationController
     end 
   end
 
-  def destroy; end
+  def destroy
+    photo = Photo.find(params[:id])
+    photo.destroy
+    redirect_to photo_path, status: :see_other
+  end
 
   def search
-    @photos = Photo.search(params[:query].downcase)
+    query = params[:query]
+    if query.blank?
+      render "search"
+    else
+     @photo = Photo.includes(:image_attachment).where("LOWER(title) LIKE ?", "%#{query}%")
+    end
   end
 
   private
