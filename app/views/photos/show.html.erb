@@ -5,7 +5,7 @@
 <p>
     <%= @photo.description %>
 </p>
-<p>Updated at</p>
+<p>Updated at <%= @photo.updated_at.strftime("%B %d, %Y") %></p>
 <div>
     <% if @photo.image.attached? %>
       <div>
