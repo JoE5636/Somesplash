@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @photos = @category.photos
     @comments = @category.comments
+    @newcomment = Comment.new
   end
 
   def create
@@ -48,4 +49,8 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name, :description, :cover)
   end
+
+  # def comment_params
+  #   params.require(:comment).permit(:body)
+  # end
 end

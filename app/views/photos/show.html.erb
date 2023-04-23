@@ -20,23 +20,27 @@
       turbo_confirm: "Are you sure?"
     } %>
 </div>
-<h3>Deja un comentario</h3>
-<h2>Comments</h2>
+
+<%= form_with(model: [@photo, @newcomment], url: photo_comments_path(@photo)) do |form| %>
+  <div>
+    <%= form.text_field :body %>
+  </div>
+
+  <%= form.submit 'Agregar Comentario' %>
+<% end %>
+
 <% @comments.each do |comment| %>
   <div>
     <% unless comment.blank?%>
       <div>
         <br />
+        <br />
         <%= comment.body %>
-        <p>Send x days ago</p>
-        <p>Photo.find(1).comments.create(body:"hola amigaso")</p>
-        <p>Photo.find(1).comments.find(7).delete</p>
-        
+        <br />
         <br />
       </div>
     <% end %>
   </div>
-
 <% end %>
 
 

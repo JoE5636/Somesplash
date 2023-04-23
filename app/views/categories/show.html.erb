@@ -31,6 +31,14 @@
   </div>
 <% end %>
 
+<%= form_with(model: [@category, @newcomment], url: category_comments_path(@category)) do |form| %>
+  <div>
+    <%= form.text_field :body %>
+  </div>
+
+  <%= form.submit 'Agregar Comentario' %>
+<% end %>
+
 <% @comments.each do |comment| %>
   <div>
     <% unless comment.blank?%>
