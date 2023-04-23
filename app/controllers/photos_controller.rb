@@ -33,7 +33,15 @@ class PhotosController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    @pohto = Photo.find(params[:id])
+
+    if @photo.update(photo_params)
+      redirect_to photo_path(@photo)
+    else
+      render "edit", status: :unprocessable_entity
+    end 
+  end
 
   def destroy; end
 
