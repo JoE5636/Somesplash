@@ -9,6 +9,7 @@
 <% if @photo.blank? %> 
     <%= "No photos found" %>
 <% elsif !@photo.nil? %>
+    <%= @photo.size %> photos found
     <% @photo.each do |photo| %>
         <div>
         <%= image_tag photo.image %>

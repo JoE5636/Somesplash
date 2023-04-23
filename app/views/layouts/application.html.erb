@@ -11,9 +11,11 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
+    <div class="container-lg section-padding-xs">
       <%= link_to "Some Splash", categories_path %>
       <%= link_to 'Search', search_path %>
+    </div>
     </header>
     <%= yield %>
     <footer class="footer">
