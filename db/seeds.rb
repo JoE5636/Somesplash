@@ -13,16 +13,19 @@ wallpaper = Category.create(
     name: "Wallpaper", 
     description: "From epic drone shots to inspiring moments in nature, find free HD wallpapers worthy of your screens."
 )
+wallpaper.cover.attach(io: File.open('db/images/wallpapers.png'), filename: 'wallpapers.png')
 
 nature = Category.create(
     name: "Nature",
     description: "Let’s celebrate the magic of Mother Earth — with images of everything our planet has to offer."
 )
+nature.cover.attach(io: File.open('db/images/nature.png'), filename: 'nature.png')
 
 people = Category.create(
     name: "People", 
     description: "Real people, captured. Photography has the power to reflect the world around us, give voice to individuals and groups."
 )
+people.cover.attach(io: File.open('db/images/people.png'), filename: 'people.png')
 
 puts "Seeding Comments Category"
 
