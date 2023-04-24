@@ -1,8 +1,13 @@
+<div class="container-lg base_new_category">
 <%= form_with model: category do |form| %>
 <div>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-
+  <%# <div></div> %>
+  <div>
+    <%= form.label :name, class: "overline" %>
+  </div>
+  <div>
+    <%= form.text_field :name, placeholder: "tecnology", placeholder_class: "", class: "w-full input_new_category input_name_new_category margin__input" %>
+  </div>
   <% category.errors.full_messages_for(:name).each do |message| %>
     <span>
       <%= message %>
@@ -11,9 +16,12 @@
 </div>
 
 <div>
-  <%= form.label :description %>
-  <%= form.text_area :description %>
-
+  <div>
+    <%= form.label :description, class: 'overline' %>
+  </div>
+  <div>
+    <%= form.text_area :description, placeholder: "Exploring our complicated relationship with technology...", placeholder_class: "", class: "w-full input_new_category margin__input"%>
+  </div>
   <% category.errors.full_messages_for(:description).each do |message| %>
     <span>
       <%= message %>
@@ -22,8 +30,10 @@
 </div>
 
 <div>
-  <%= form.label :cover %>
-  <%= form.file_field :cover, accept: 'image/png, image/jpeg' %>
+  <div>
+    <%= form.label :cover, class: 'overline'%>
+  </div>
+  <%= form.file_field :cover, accept: 'image/png, image/jpeg', class: "button_choose_file" %>
 
   <% category.errors.full_messages_for(:cover).each do |message| %>
     <span>
@@ -33,6 +43,10 @@
 </div>
 
 <div>
-  <%= form.submit %>
+  <%= form.submit class: "button overline w-full button_new_category"%>
+</div>
+<div>
+  <%= link_to "BACK", categories_path, class: "button w-full text-decoration-none overline button_back_categories"%>
 </div>
 <% end %>
+</div>

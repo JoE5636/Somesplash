@@ -1,0 +1,49 @@
+.base_new_category {
+    font-family: 'Inter';
+}
+
+.new_title {
+    color: var(--black);
+    font-family: 'Montserrat';
+    font-size: 30px;
+    line-height: 36px;
+    margin: 32px 0 16px 0;
+}
+
+.input_new_category {
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: var(--gray-200);
+    border: solid 1px #6B7280;
+    resize: none;
+    color: black;
+}
+
+.input_name_new_category {
+    border-left: solid 1px #6B7280;
+    border-top: solid 1px #6B7280;
+}
+
+.margin__input {
+    margin-bottom: 1em;
+    margin-top: 0.25em;
+}
+
+.button_new_category {
+    background-color: #757575;
+    color: white;
+    text-transform: uppercase;
+    margin: 16px 0;
+}
+
+.button_choose_file {
+    border-radius: 4px;
+    padding: 3px 6px;
+}
+
+.button_back_categories {
+    margin: 16px 0;
+    background-color: var(--gray-200);
+    color: black;
+}
+
