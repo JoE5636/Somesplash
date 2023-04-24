@@ -39,6 +39,10 @@
     text-align: center;
 }
 
+.text-align-left {
+    text-align: left;
+}
+
 .color-primary {
     color: var(--primary);
 }
@@ -82,3 +86,14 @@
 .paddings__footer {
     padding: 0 0;
 }
+
+.block {
+    display: block;
+  }
+
+  .inline {
+    display: inline;
+  }
+  .margin-b--bottom {
+    margin-bottom: 1rem; /* o cualquier otro valor que desees */
+  }
