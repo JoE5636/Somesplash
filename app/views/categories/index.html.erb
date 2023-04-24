@@ -19,7 +19,10 @@
                             <%= category.name %>
                           </span>
                           <span class = "photos_count">
-                            <%= category.photos_count %> Photos
+                            <% if !category.photos_count.nil? %>
+                              <%= category.photos_count %> Photos
+                            <% end %>
+                            
                           </span>
                           <div>
                             <%= link_to "edit", edit_category_path(category) %>
