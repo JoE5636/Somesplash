@@ -1,0 +1,29 @@
+.Category-sumary {
+    display: grid;
+    align-items: center;
+    gap: 1em;
+}
+
+.photos_count{
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    line-height:1.25rem;
+    color: var(--gray-300);
+}
+
+
+
+
+.Category-sumary-card_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Category-sumary__icons {
+    display: flex;
+    height: 40px;
+    gap: 1em;
+    align-items: center;
+}

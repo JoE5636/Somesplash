@@ -1,24 +1,41 @@
-<h1>Categories</h1>
-<% @categories.each do |category| %>
-<div>
-  <% if category.cover.attached? %>
-    <div>
-      <%= image_tag category.cover,  alt: "Category image" %>
-    </div>
-  <% end %>
-  <span>
-    <%= category.name %>
-  </span>
-  <span>
-    <%= category.photos_count %>
-  </span>
-  <div>
-    <%= link_to "edit", edit_category_path(category) %>
-    <%= link_to "destroy", category_path(category), data: {
-      turbo_method: :delete,
-      turbo_confirm: "Are you sure?"
-    } %>
-  </div>
 
-</div>
-<% end %>
+<section class="container-lg Category-sumary">
+        <div class="text-align-left">
+          <h3 class="heading-md semibold">Categories</h1>
+        </div>
+        <div>
+        <%= link_to "NEW CATEGORY", new_category_path, class:"button button--secondary button--sm text-decoration-none inline " %>
+        </div>
+
+        <div class="Category-sumary__content">  
+                <% @categories.each do |category| %>
+                        <div class="Category-sumary__card">
+                          <% if category.cover.attached? %>
+                            <div>
+                              <%= image_tag category.cover,  alt: "Category image" %>
+                            </div>
+                          <% end %>
+                          <span class= "heading-sm">
+                            <%= category.name %>
+                          </span>
+                          <span class = "photos_count">
+                            <%= category.photos_count %> Photos
+                          </span>
+                          <div>
+                            <%= link_to "edit", edit_category_path(category) %>
+                            <%= link_to "destroy", category_path(category), data: {
+                              turbo_method: :delete,
+                              turbo_confirm: "Are you sure?"
+                            } %>
+                          </div>
+                          <div class="Category-sumary-card_footer">
+                              <div class="Category-sumary__icons ">
+                                <object data="/app/assets/images/edit.svg"></object>
+                                <object data="/app/assets/images/delete.svg"></object>
+                              </div>
+                           </div>
+                        
+                      </div>
+                <% end %>
+    </div>
+</section>
