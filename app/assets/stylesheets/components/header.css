@@ -1,25 +1,41 @@
-.header {
-  background-color: var(--gray-100);
+.header_rotate_icon {
+  transform: rotate(180deg);
+}
 
-  position: sticky;
+.text-somesplash {
+  font-family: 'Montserrat';
+  font-size:28px;
+  line-height: 40px;
+  font-weight: 700;
+  color: black;
+}
+
+ .header {
+  background-color: var(--gray-100);
+  /* position: sticky;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 2;
+  z-index: 2; */
 }
 
 .navbar {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: 0.3em 0;
+  /* align-items: center;
+  padding: 0.3em 0; */
 }
 
 .navbar__logo {
   color: var(--gray-900);
 }
 
+.header_search {
+  background-color: var(--gray-200);
+  color: var(--gray-400);
+}
+/*
 .navbar__links {
   display: flex;
   flex-wrap: wrap;
@@ -124,4 +140,4 @@
     }
   }
 
-}
+} */

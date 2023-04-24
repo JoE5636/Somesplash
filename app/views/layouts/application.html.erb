@@ -11,10 +11,19 @@
   </head>
 
   <body>
-    <header class="header">
-    <div class="container-lg section-padding-xs">
-      <%= link_to "Some Splash", categories_path %>
-      <%= link_to 'Search', search_path %>
+    <header class="container-lg">
+    <div class="section-padding-xs header navbar">
+      <div class="navbar">
+        <div class="header_rotate_icon">
+          <i class="ri-unsplash-fill ri-xl align-middle"></i>
+        </div>
+        <div>
+          <%= link_to "Somesplash", categories_path, class: "text-decoration-none align-middle text-somesplash" %>
+        </div>
+      </div>
+      <div>
+        <%= link_to 'Search', search_path, class: "text-decoration-none button header_search overline" %>
+      </div>
     </div>
     </header>
     <main class= "section-lg">
